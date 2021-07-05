@@ -13,11 +13,15 @@ class Solution {
             }
         }
         
-        
         do {
-            deleteBlockCount = Deleting(m, n, map); // 1. 현재 맵상태에서 삭제할 블록 체크
-            Arranging(m, n, map); // 2. 삭제 블록 고려해서 재정리(남은윗블록 아래로 떨어트리기)
-            answer += deleteBlockCount;  // 3. 삭제한 블록 개수 계산
+            // 1. 현재 맵상태에서 삭제할 블록 체크
+            deleteBlockCount = Deleting(m, n, map); 
+
+            // 2. 삭제 블록 고려해서 재정리(남은윗블록 아래로 떨어트리기)
+            Arranging(m, n, map); 
+
+            // 3. 삭제한 블록 개수 계산
+            answer += deleteBlockCount;  
         } while(deleteBlockCount != 0);   // 4. 삭제할 블록이 존재하는 한, 계속 수행
         
         return answer;
